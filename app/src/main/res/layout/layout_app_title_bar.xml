@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--顶部的标题栏-->
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/c_ffaa33" />
+
+    <ImageView
+        android:id="@+id/iv_back"
+        style="@style/top_layout_back"
+        android:layout_height="?android:attr/actionBarSize"/>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textColor="@color/c_313131"
+        android:textSize="18dp"
+        app:layout_constraintLeft_toRightOf="@id/iv_back"
+        app:layout_constraintRight_toLeftOf="@id/btn_right" />
+
+    <Button
+        android:id="@+id/btn_right"
+        android:layout_width="wrap_content"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_marginRight="@dimen/dimen_15dp"
+        android:background="@color/transparent"
+        android:gravity="center"
+        android:textColor="@color/c_666666"
+        android:textSize="14dp"
+        app:layout_constraintLeft_toRightOf="@id/tv_title"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</merge>

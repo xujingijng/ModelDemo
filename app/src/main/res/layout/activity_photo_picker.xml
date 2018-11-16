@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".utils.photoselect.PhotoPickerActivity">
+
+    <!--标题-->
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/c_ffaa33" />
+    <ImageView
+        android:id="@+id/iv_back"
+        style="@style/top_layout_back"
+        android:layout_height="?android:attr/actionBarSize"/>
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="60dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textColor="@color/c_313131"
+        android:textSize="18dp"
+        android:text="@string/whole_photo"
+        app:layout_constraintLeft_toRightOf="@id/iv_back"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/xt_recyclerview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="@dimen/dimen_2dp"
+        android:background="@color/c_313131"
+        app:layout_constraintTop_toBottomOf="@id/view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <!--底部-->
+    <View
+        android:id="@+id/bottom_tab_bar"
+        android:layout_width="0dp"
+        android:layout_height="?android:attr/actionBarSize"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="#BB000000"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    <TextView
+        android:id="@+id/floder_name"
+        android:layout_width="wrap_content"
+        android:layout_height="?android:attr/actionBarSize"
+        android:gravity="center_vertical"
+        android:textColor="@color/photopicker_floder_name_color_selector"
+        android:textSize="16sp"
+        android:paddingLeft="@dimen/dimen_15dp"
+        android:paddingRight="@dimen/dimen_15dp"
+        android:drawableRight="@drawable/photopicker_text_indicator_selector"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/space"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/whole_photo"/>
+    <Space
+        android:id="@+id/space"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/floder_name"
+        app:layout_constraintRight_toLeftOf="@id/photo_num"/>
+    <Button
+        android:id="@+id/photo_num"
+        android:layout_width="wrap_content"
+        android:layout_height="?android:attr/actionBarSize"
+        android:gravity="center_vertical|right"
+        android:textColor="@color/photopicker_photo_num_color_selector"
+        android:enabled="false"
+        android:textSize="16sp"
+        android:layout_marginRight="@dimen/dimen_15dp"
+        android:background="@color/transparent"
+        app:layout_constraintLeft_toRightOf="@id/space"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/ok"/>
+
+    <!--相册列表-->
+    <ViewStub
+        android:id="@+id/floder_stub"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view"
+        app:layout_constraintBottom_toTopOf="@id/bottom_tab_bar"
+        android:layout="@layout/layout_photopicker_fload_list_layout_stub"/>
+
+</android.support.constraint.ConstraintLayout>

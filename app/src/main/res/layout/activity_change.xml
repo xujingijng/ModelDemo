@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:id="@+id/father"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ChangeActivity">
+
+    <FrameLayout
+        android:id="@+id/layout_board"
+        android:layout_width="match_parent"
+        android:background="@color/colorAccent"
+        android:layout_height="200dp"/>
+
+    <FrameLayout
+        android:id="@+id/layout_video"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="bottom|right"
+        android:background="@color/c_ffaa33" />
+
+     <Button
+             android:id="@+id/btn"
+             android:layout_marginTop="300dp"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="切换"/>
+
+</FrameLayout>
